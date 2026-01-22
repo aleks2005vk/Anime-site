@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.7; /* комфортная читаемость */
+  color: #eaeaea;   /* светлый текст */
+  background: #0d0d0d; /* тёмный фон для аниме-сайта */
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px; /* расстояние между буквами */
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6600; /* оранжевый акцент (хеллоуин/аниме стиль) */
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffcc00; /* золотистый */
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ===== ТЕКСТ / ПАРАГРАФ ===== */
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfcfcf;
+  margin-bottom: 15px;
+}
+
+/* ===== ССЫЛКИ ===== */
+a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #ff6600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ffaa33;
+  text-decoration: underline;
+}
+
+/* ===== МЕНЮ ===== */
+.navigation-container ul li a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navigation-container ul li a:hover {
+  color: #ff6600;
+}
+
+/* ===== ЧАТ ===== */
+.chat .message {
+  font-family: 'Fredoka One', cursive;
+  font-size: 14px;
+  color: #fff;
+  background: #222;
+  
+}
+
+/* ===== МЕЛКИЕ ДЕТАЛИ ===== */
+span, small {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.5px;
+}
+.contact {
+	position: fixed;   /* фиксируем */
+	bottom: 0;         /* прижимаем к низу */
+	left: 0;
+	width: 100%;       /* на всю ширину */
+	background: #111;  /* фон для красоты */
+	color: #fff;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.name {
+    font-size: 38px;
+    color: #fff;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 61px;
+    background-color: #242424;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 581px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    padding: 1rem 2rem;
+    position: relative;
+}
+a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: all 1s;
+    transform-origin: left;
+}
+ul li a:hover:before,
+ul li a:hover:after {
+    transform: scalex(1);
+}
+a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: all 1s;
+    transform-origin: right;
+}
+body {
+	min-height: 100vh;        
+	display: flex;
+	flex-direction: column;
+}
+

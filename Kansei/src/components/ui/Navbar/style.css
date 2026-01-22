@@ -1,0 +1,453 @@
+/* ===== НАВБАР (тёмная версия) ===== */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  /* глубокая темная палитра (не чисто чёрная) */
+  background: linear-gradient(135deg, #071026 0%, #0f1724 100%);
+  padding: 0 30px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+/* Логотип Kansei */
+.name {
+  font-family: 'Bebas Neue', 'Inter', sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  /* чуть холодный, мягкий светлый тон для лучшей читаемости */
+  color: #dbeafe;
+  text-shadow: 0 4px 18px rgba(12, 18, 34, 0.6);
+  letter-spacing: 2px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.name:hover {
+  transform: scale(1.04);
+  text-shadow: 0 6px 22px rgba(18, 30, 60, 0.7);
+}
+
+/* Контейнер поиска */
+.search-container {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 40px;
+}
+
+/* Кнопка смены темы */
+.theme-toggle {
+  margin: 0 20px;
+}
+
+/* Кнопки MUI: более тёмный полупрозрачный фон */
+.MuiIconButton-root {
+  color: #e6f0ff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
+  transition: all 0.28s ease !important;
+}
+
+.MuiIconButton-root:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  transform: rotate(180deg);
+}
+
+/* Навигационное меню */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+ul {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #e6f0ff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.22s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* лёгкий блеск при наведении */
+ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  transition: left 0.45s ease;
+}
+
+ul li a:hover::before {
+  left: 100%;
+}
+
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.03);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(3, 8, 18, 0.6);
+}
+
+/* Активная ссылка: мягкая подсветка */
+ul li a.active {
+  background: rgba(99, 102, 241, 0.08); /* холодный индиго */
+  box-shadow: 0 6px 20px rgba(9, 12, 24, 0.6);
+}
+
+/* СТИЛИ ДЛЯ ПОИСКА */
+.search-wrapper {
+  width: 100%;
+}
+
+.MuiAutocomplete-root {
+  width: 100% !important;
+}
+
+/* Поле ввода — тёмный стек */
+.MuiTextField-root {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 25px !important;
+  backdrop-filter: blur(6px);
+  transition: all 0.22s ease;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.MuiTextField-root:hover {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.MuiInputBase-root {
+  color: #e6f0ff !important;
+  padding: 8px 16px !important;
+}
+
+.MuiInputLabel-root {
+  color: rgba(230, 240, 255, 0.65) !important;
+  font-weight: 500 !important;
+}
+
+/* убираем яркий контур, ставим приглушённую индиговую линию в фокусе */
+.MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid rgba(99, 102, 241, 0.18) !important;
+}
+
+/* попап подсказок — почти чёрный, но с оттенком синевы */
+.MuiAutocomplete-popper {
+  background: #0c1114 !important;
+  border-radius: 12px !important;
+  margin-top: 8px !important;
+  box-shadow: 0 8px 30px rgba(2,6,12,0.7);
+}
+
+.MuiAutocomplete-listbox {
+  background: #0c1114 !important;
+  color: #e6f0ff !important;
+  border-radius: 12px !important;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.MuiAutocomplete-option {
+  color: #e6f0ff !important;
+  font-family: 'Inter', sans-serif !important;
+  padding: 10px 14px;
+}
+
+.MuiAutocomplete-option:hover {
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.MuiAutocomplete-option[aria-selected="true"] {
+  background: rgba(99, 102, 241, 0.12) !important;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+  .top-bar {
+    padding: 0 20px;
+    height: 70px;
+  }
+  
+  .name {
+    font-size: 36px;
+  }
+  
+  .search-container {
+    max-width: 400px;
+    margin: 0 20px;
+  }
+  
+  ul li a {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  
+  .name {
+    font-size: 32px;
+    order: 1;
+    flex: 1;
+  }
+  
+  .theme-toggle {
+    order: 2;
+    margin: 0;
+  }
+  
+  .search-container {
+    order: 4;
+    max-width: 100%;
+    margin: 15px 0 0 0;
+    flex: 0 0 100%;
+  }
+  
+  .nav-menu {
+    order: 3;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  
+  ul {
+    gap: 3px;
+  }
+  
+  ul li a {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+  
+  .MuiAutocomplete-root {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 12px 15px;
+    gap: 12px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  ul {
+    gap: 2px;
+  }
+  
+  ul li a {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .MuiIconButton-root {
+    padding: 8px !important;
+  }
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-bar {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 6px rgba(99, 102, 241, 0.06);
+  }
+  50% {
+    text-shadow: 0 0 14px rgba(99, 102, 241, 0.10);
+  }
+  100% {
+    text-shadow: 0 0 6px rgba(99, 102, 241, 0.06);
+  }
+}
+
+.name {
+  animation: glow 3.5s ease-in-out infinite;
+}
+/* ===== НАВБАР (светлая тема) ===== */
+[data-theme="light"] .top-bar {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .name {
+  color: #111827;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+[data-theme="light"] .name:hover {
+  text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .MuiIconButton-root {
+  color: #111827 !important;
+  background: rgba(0,0,0,0.05) !important;
+}
+
+[data-theme="light"] .MuiIconButton-root:hover {
+  background: rgba(0,0,0,0.08) !important;
+}
+
+[data-theme="light"] ul li a {
+  color: #111827;
+}
+
+[data-theme="light"] ul li a:hover {
+  background: rgba(0,0,0,0.03);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] ul li a.active {
+  background: rgba(138, 44, 226, 0.08);
+  box-shadow: 0 3px 12px rgba(138,44,226,0.12);
+}
+
+[data-theme="light"] .MuiTextField-root {
+  background: rgba(0,0,0,0.03) !important;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="light"] .MuiInputBase-root {
+  color: #111827 !important;
+}
+
+[data-theme="light"] .MuiInputLabel-root {
+  color: rgba(0,0,0,0.5) !important;
+}
+
+[data-theme="light"] .MuiAutocomplete-popper,
+[data-theme="light"] .MuiAutocomplete-listbox {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+[data-theme="light"] .MuiAutocomplete-option:hover {
+  background: rgba(0,0,0,0.05) !important;
+}
+
+[data-theme="light"] .MuiAutocomplete-option[aria-selected="true"] {
+  background: rgba(138,44,226,0.15) !important;
+}
+
+/* ===== FOOTER (светлая тема) ===== */
+[data-theme="light"] footer.contact {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+[data-theme="light"] footer.contact li a {
+  color: #111827;
+}
+
+[data-theme="light"] footer.contact li a::before,
+[data-theme="light"] footer.contact li a::after {
+  background: #111827;
+}
+.MuiAutocomplete-listbox {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+}
+
+.MuiAutocomplete-option {
+  display: block !important;
+  width: 100% !important;
+  padding: 10px 16px !important; /* чуть больше сверху/снизу */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  line-height: 1.6 !important; /* увеличиваем межстрочный интервал */
+  font-size: 14px !important;  /* можно подрегулировать размер шрифта */
+}
+
+/* Для светлой темы */
+[data-theme="light"] .MuiAutocomplete-option {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.MuiAutocomplete-option:last-child {
+  border-bottom: none !important;
+}
+/* Обновленные стили для поиска */
+.MuiAutocomplete-listbox {
+  display: flex !important;
+  flex-direction: column !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.MuiAutocomplete-option {
+  display: block !important;
+  width: 100% !important;
+  padding: 8px 16px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.MuiAutocomplete-option:last-child {
+  border-bottom: none !important;
+}
+
+/* Для светлой темы */
+[data-theme="light"] .MuiAutocomplete-option {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Убираем стандартные отступы и маркеры списка */
+.MuiAutocomplete-listbox ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.MuiAutocomplete-listbox li {
+  list-style: none !important;
+  margin: 0 !important;
+}

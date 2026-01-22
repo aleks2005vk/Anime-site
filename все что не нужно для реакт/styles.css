@@ -1,0 +1,443 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.name {
+    font-size: 38px;
+    color: #fff;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 61px;
+    background-color: #242424;
+}
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 581px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+ul li {
+    list-style: none;
+}
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    padding: 1rem 2rem;
+    position: relative;
+}
+a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: all 1s;
+    transform-origin: left;
+}
+ul li a:hover:before,
+ul li a:hover:after {
+    transform: scalex(1);
+}
+a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transition: all 1s;
+    transform-origin: right;
+}
+.announcement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #606060;
+    color: #fff;
+    font-size: 20px;
+    height: 432px;
+    border-radius: 0 0 20px 20px;
+}
+.title {
+    font-size: 2cap;
+
+}
+.description {
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 600px;
+    text-align: center;
+}
+.announcement-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+.new-anime {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+.anime-title {
+    text-align: center;
+    margin-top: 3px;
+}
+.anime-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 360px;
+	border-radius: 20px;
+    background-color: #606060;
+    padding: 12px;
+    position: relative;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.arrow.left {
+    left: 50px;
+}
+.arrow.right {
+    right: 50px;
+}
+.arrow:hover {
+    background-color: #555;
+}
+.chat {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.message {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.chat-form {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.chat-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.chat-send {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+.chat-send:hover {
+  background-color: #555;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  padding: 20px;
+}
+.extra-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 900px;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 300px;
+  padding: 20px;
+}
+.updates {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+.update-card {
+  width: 377px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+}
+.watched-anime {
+  width: 900px;
+  background-color: #dcdcdc;
+  padding: 20px;
+  border-radius: 10px;
+}
+.watched-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.watched-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.watched-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.watched-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.watched-info {
+  flex: 1;
+}
+.anime-name {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+.anime-details {
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+.watched-options {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.watched-options::before {
+  content: "...";
+  color: #fff;
+  font-size: 12px;
+}
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 327px;
+  padding-bottom: 10px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 250px;
+}
+
+.anime-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rating {
+  display: flex;
+  justify-content: center; 
+  gap: 5px;               
+  margin-top: -26px;      
+}
+
+.rating-star {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.rating-star:hover {
+  transform: scale(1.5);
+}
+.info{
+	margin-left: 10px;
+}
+.anime-cards{
+	display: flex;
+	gap: 30px;
+	overflow-x: auto;
+	padding-bottom: 10px;
+	align-items: center;
+}
+
+.anime-wrapper{
+	position: relative;
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	width: 100%;
+ 	margin: 0 auto;
+}
+
+.anime-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+/* ===== БАЗОВЫЙ ТЕКСТ ===== */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.7; /* комфортная читаемость */
+  color: #eaeaea;   /* светлый текст */
+  background: #0d0d0d; /* тёмный фон для аниме-сайта */
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px; /* расстояние между буквами */
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff6600; /* оранжевый акцент (хеллоуин/аниме стиль) */
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffcc00; /* золотистый */
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ===== ТЕКСТ / ПАРАГРАФ ===== */
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfcfcf;
+  margin-bottom: 15px;
+}
+
+/* ===== ССЫЛКИ ===== */
+a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #ff6600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ffaa33;
+  text-decoration: underline;
+}
+
+/* ===== МЕНЮ ===== */
+.navigation-container ul li a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.navigation-container ul li a:hover {
+  color: #ff6600;
+}
+
+/* ===== ЧАТ ===== */
+.chat .message {
+  font-family: 'Fredoka One', cursive;
+  font-size: 14px;
+  color: #fff;
+  background: #222;
+  
+}
+
+/* ===== МЕЛКИЕ ДЕТАЛИ ===== */
+span, small {
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 0.5px;
+}

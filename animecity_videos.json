@@ -1,0 +1,38 @@
+[
+  {
+    "anime_info": {
+      "title": "ანიმე",
+      "page_url": "https://animecity.ge/anime/page/3/"
+    },
+    "videos_found": 5,
+    "video_sources": [
+      {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+        "type": "network_request",
+        "method": "GET"
+      },
+      {
+        "url": "https://www.animecity.ge/uploads/New%20Project.mp4",
+        "type": "network_request",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2",
+        "type": "network_request",
+        "method": "GET"
+      },
+      {
+        "url": "https://t.dtscdn.com/widget/?d=4C3017564235323420651692011512DB&nid=0&p=2114454483&t=-240&s=800x600x24&u=https%3A%2F%2Fanimecity.ge%2Fanime%2Fpage%2F3%2F&r=",
+        "type": "network_request",
+        "method": "GET"
+      },
+      {
+        "url": "https://cdn.tynt.com/tc.js",
+        "type": "network_request",
+        "method": "GET"
+      }
+    ],
+    "page_url": "https://animecity.ge/anime/page/3/",
+    "timestamp": "2025-08-29 03:26:33"
+  }
+]

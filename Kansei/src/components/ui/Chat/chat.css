@@ -1,0 +1,206 @@
+:root {
+  --accent-1: #8a2de2; /* если в проекте нет — это запасной вариант */
+  --bg-1: #0f0f10;
+  --panel: #0b0b0c;
+  --muted: #9aa3b2;
+  --text: #e6eef8;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+}
+
+[data-theme="light"] {
+  --accent-1: #8a2de2;
+  --bg-1: #ffffff;
+  --panel: #f5f5f7;
+  --muted: #6c757d;
+  --text: #212529;
+  --glass: rgba(0,0,0,0.04);
+  --radius: 12px;
+}
+
+.chat {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.chat-window {
+  background: var(--panel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  flex-direction: column;
+  height: 420px; /* можно подогнать */
+}
+
+[data-theme="light"] .chat-window {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Сообщения */
+.chat-messages {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+  background: transparent;
+}
+
+[data-theme="light"] .chat-messages {
+  scrollbar-color: rgba(0,0,0,0.15) transparent;
+}
+
+/* Кастомные скроллбары для WebKit */
+.chat-messages::-webkit-scrollbar { width: 10px; }
+.chat-messages::-webkit-scrollbar-track { background: transparent; }
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--glass);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Одиночное сообщение */
+.message {
+  display: inline-block;
+  max-width: 82%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--glass);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.32;
+  box-shadow: 0 4px 18px rgba(2,6,23,0.45);
+  position: relative;
+  word-break: break-word;
+}
+
+[data-theme="light"] .message {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Время внутри сообщения */
+.message .time {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  vertical-align: middle;
+  opacity: 0.95;
+}
+
+/* Альтернативный стиль для "своих" сообщений */
+.message.me {
+  margin-left: auto;
+  background: linear-gradient(180deg, rgba(138,44,226,0.14), rgba(74,23,168,0.12));
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Чередование стилей */
+.chat-messages .message:nth-child(odd) { align-self: flex-start; }
+.chat-messages .message:nth-child(even) { align-self: flex-end; transform: translateY(0); }
+
+/* Форма ввода */
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background: var(--panel);
+  border-top: 1px solid rgba(255,255,255,0.02);
+  align-items: center;
+}
+
+[data-theme="light"] .chat-form {
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Поле ввода */
+.chat-input {
+  flex: 1;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.01);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  transition: box-shadow .18s ease, border-color .18s ease, transform .12s ease;
+}
+
+.chat-input::placeholder { color: rgba(255,255,255,0.28); }
+
+[data-theme="light"] .chat-input {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  color: var(--text);
+}
+
+[data-theme="light"] .chat-input::placeholder {
+  color: rgba(0,0,0,0.4);
+}
+
+.chat-input:focus {
+  box-shadow: 0 6px 22px rgba(138,44,226,0.09);
+  border-color: rgba(138,44,226,0.6);
+  transform: translateY(-1px);
+}
+
+/* Кнопка отправки */
+.chat-send {
+  background: linear-gradient(180deg, var(--accent-1), rgba(122,32,210,0.9));
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.94rem;
+  box-shadow: 0 8px 20px rgba(138,44,226,0.16);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  white-space: nowrap;
+}
+
+.chat-send:active { transform: translateY(1px) scale(0.998); }
+.chat-send:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+
+/* Адаптив */
+@media (max-width: 740px) {
+  .chat-window { height: 360px; border-radius: 10px; }
+  .chat { padding: 10px; }
+  .chat-input { min-height: 46px; font-size: 0.95rem; }
+  .message { max-width: 88%; font-size: 0.94rem; padding: 10px; }
+}
+
+/* Небольшая подсказка состояния */
+.chat .empty-hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 18px;
+  text-align: center;
+}
+
+/* Доступность */
+.chat-input:focus-visible, .chat-send:focus-visible {
+  outline: 3px solid rgba(138,44,226,0.18);
+  outline-offset: 2px;
+}
+
+/* Если потребуется плиточный вид сообщений */
+.message--with-avatar { display: flex; gap: 10px; align-items: flex-end; }
+.message--avatar { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: var(--glass); }
+
+/* Смещение времени */
+.message .time { transform: translateY(-1px); }

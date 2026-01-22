@@ -1,0 +1,60 @@
+/* theme.css */
+:root {
+  /* Общие переменные (не зависящие от темы) */
+  --accent-1: #8a2de2;
+  --accent-2: #5b21b6;
+  --radius: 12px;
+  --glass: rgba(255,255,255,0.03);
+  --transition-fast: 160ms;
+  --transition-medium: 260ms;
+  
+  /* Типографика */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --base-font: 16px;
+  --h1-size: 2rem;
+  --h2-size: 1.25rem;
+  --body-line-height: 1.45;
+}
+
+/* Значения по умолчанию (темная тема) */
+[data-theme="dark"], :root {
+  --bg: #0b0b0c;
+  --panel: #0f0f10;
+  --card-bg: #0d0d0e;
+  --muted: #9aa3b2;
+  --text: #e6eef8;
+  --subtle: rgba(255,255,255,0.04);
+  --shadow: 0 10px 30px rgba(2,6,23,0.65);
+  --glass-strong: rgba(255,255,255,0.02);
+}
+
+/* Светлая тема */
+[data-theme="light"] {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --text: #0b1220;
+  --subtle: rgba(11,18,32,0.04);
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --glass-strong: rgba(11,18,32,0.02);
+  
+  /* немного другая акцентная палитра на светлой теме */
+  --accent-1: #6c2bd9;
+  --accent-2: #4a1ea6;
+}
+
+/* Базовые стили */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--base-font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--transition-medium) ease, color var(--transition-medium) ease;
+}

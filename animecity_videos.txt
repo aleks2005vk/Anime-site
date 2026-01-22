@@ -1,0 +1,12 @@
+Аниме: ანიმე
+Страница: https://animecity.ge/anime/page/3/
+Найдено видео: 5
+Источники видео:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css (network_request)
+  - https://www.animecity.ge/uploads/New%20Project.mp4 (network_request)
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2 (network_request)
+  - https://t.dtscdn.com/widget/?d=4C3017564235323420651692011512DB&nid=0&p=2114454483&t=-240&s=800x600x24&u=https%3A%2F%2Fanimecity.ge%2Fanime%2Fpage%2F3%2F&r= (network_request)
+  - https://cdn.tynt.com/tc.js (network_request)
+
+==================================================
+
