@@ -76,6 +76,7 @@ src/
 ## 🌐 API Integration
 
 Uses **Jikanjs** for anime data:
+
 - Real-time anime information
 - Episode details
 - Genre filtering
@@ -92,6 +93,7 @@ Uses **Jikanjs** for anime data:
 ## 🎨 Theming
 
 Dark/Light mode support with context API:
+
 - Persistent theme preference
 - Smooth transitions
 - Full component coverage
@@ -115,6 +117,7 @@ npm run lint
 ## 📝 Environment Variables
 
 Create `.env` file:
+
 ```
 VITE_API_BASE_URL=https://api.jikan.moe/v4
 ```
@@ -134,6 +137,7 @@ This project is licensed under the MIT License - see LICENSE file for details
 ## 👨‍💻 Author
 
 **aleks2005vk** - Full Stack Developer
+
 - GitHub: [@aleks2005vk](https://github.com/aleks2005vk)
 - Project: [Anime-site](https://github.com/aleks2005vk/Anime-site)
 
